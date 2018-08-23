@@ -1,0 +1,142 @@
+@import '~susy/sass/susy';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import "~swiper/dist/css/swiper.min.css";
+
+$susy: (
+		columns: susy-repeat(10),
+		gutters: 30px,
+		spread: 'narrow',
+		container-spread: 'wide',
+		container: 1215px,
+);
+
+$text-color-1: #452e76;
+$text-color-2: #48c3dc;
+$text-color-3: #808080;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  position: relative;
+}
+
+.employee-wrapper {
+  padding: 25px 0;
+
+  &:after {
+	background: url("assets/images/bg.png");
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	opacity: 0.25;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+  }
+
+  h1 {
+	color: $text-color-1;
+	font-size: 60px;
+	text-align: center;
+	margin: 0 0 35px;
+  }
+
+  .employees {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1245px;
+
+	.employee {
+	  flex: 0 0 span(2);
+	  margin-top: 70px;
+	  overflow: hidden;
+	  padding: 0 gutter()/2;
+	  text-align: center;
+
+	  .avatar {
+		border-radius: 50%;
+		max-width: 100%;
+	  }
+
+	  .name {
+		color: $text-color-1;
+		font-size: 20px;
+		margin-top: 15px;
+	  }
+
+	  .position, .city {
+		font-size: 14px;
+		font-weight: lighter;
+	  }
+
+	  .position {
+		color: $text-color-2;
+		margin-top: 15px;
+	  }
+
+	  .city {
+		color: $text-color-3;
+		margin-top: 3px;
+	  }
+	}
+  }
+}
+
+.swiper-container {
+  $button-spacing: 50px;
+  background: url("assets/images/bg-slider.png") center center no-repeat;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+
+  .swiper-button-prev {
+	background-image: url("assets/images/angle-left.png");
+	left: $button-spacing;
+  }
+
+  .swiper-button-next {
+	background-image: url("assets/images/angle-right.png");
+	right: $button-spacing;
+  }
+
+  .swiper-button-close {
+	$size: 60px;
+	background-image: url("assets/images/close.png");
+	cursor: pointer;
+	height: $size;
+	position: absolute;
+	right: $button-spacing;
+	top: $button-spacing;
+	width: $size;
+	z-index: 1;
+  }
+
+  .employee-slide {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	.position {
+	  font-weight: lighter;
+	  font-size: 72px;
+	}
+
+	.name {
+	  font-size: 120px;
+	  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.55);
+	  font-weight: 600;
+	}
+  }
+}

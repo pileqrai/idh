@@ -1,0 +1,21 @@
+{{#if showSwiper}}
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {{#each employees as |employee|}}
+                {{> employee-slide employee=employee}}
+            {{/each}}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-close"></div>
+    </div>
+{{else}}
+    <div class="employee-wrapper">
+        <h1>Meet our employees</h1>
+        <div class="employees">
+            {{#each employees as |employee|}}
+                {{> employee employee}}
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
